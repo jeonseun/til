@@ -10,6 +10,7 @@ Today I Learned
 
 - [OS의 역할](./os/role-of-the-os.md)
 - [OS의 구성](./os/organization-of-the-os.md)
+- [인터럽트](./os/interrupt.md)
 
 ## Daily Note
 
