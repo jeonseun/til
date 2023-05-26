@@ -12,6 +12,7 @@ Today I Learned
 - [OS의 구성](./os/organization-of-the-os.md)
 - [인터럽트](./os/interrupt.md)
 - [유저 모드, 커널 모드](./os/user-mode-kernal-mode.md)
+- [시스템 콜](./os/system-call.md)
 
 ## Daily Note
 
