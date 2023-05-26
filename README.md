@@ -6,6 +6,10 @@ Today I Learned
 
 - [Top Level 클래스](./java/top-level-class.md)
 
+## OS
+
+- [OS의 역할](./os/role-of-the-os.md)
+
 ## Daily Note
 
 - [일일 공부](./daily-note/)
