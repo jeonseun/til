@@ -1,6 +1,6 @@
 # 프로세스
 
-[전체 소스코드](../../til-code/os/process/)
+[전체 소스코드](https://github.com/jeonseun/til-code/tree/main/os/process)
 
 프로세스는 실행 중인 프로그램을 말한다. 프로그램은 명령어 리스트를 가지는 파일이 디스크에 저장된 것을 말하며 이러한 프로그램이 메모리에 적재되어 CPU가 실행할 수 있는 상태가 바로 프로세스다.
 
