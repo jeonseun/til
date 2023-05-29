@@ -1,6 +1,6 @@
 # Top Level 클래스
 
-[전체 소스코드](https://github.com/jeonseun/til-code/tree/main/java/src/main/java/me/seun/toplevel)
+[전체 소스코드](../../til-code/java/src/main/java/me/seun/toplevel/)
 
 top level 클래스는 다른 클래스의 멤버가 아닌 클래스 즉 중첩 클래스가 아닌 클래스를 말한다.
 

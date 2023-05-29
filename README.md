@@ -13,6 +13,7 @@ Today I Learned
 - [인터럽트](./os/interrupt.md)
 - [유저 모드, 커널 모드](./os/user-mode-kernal-mode.md)
 - [시스템 콜](./os/system-call.md)
+- [프로세스](./os/process.md)
 
 ## Daily Note
 
