@@ -15,6 +15,10 @@ Today I Learned
 - [시스템 콜](./os/system-call.md)
 - [프로세스](./os/process.md)
 
+## Data Structure
+
+- [연결 리스트의 개념](./data-structure/linked-list-concept.md)
+
 ## Daily Note
 
 - [일일 공부](./daily-note/)
