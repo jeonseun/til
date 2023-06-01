@@ -1,6 +1,6 @@
 # Top Level 클래스
 
-[전체 소스코드](../../til-code/java/src/main/java/me/seun/toplevel/)
+[전체 소스코드](https://github.com/jeonseun/til-code/tree/main/java/src/main/java/me/seun/toplevel)
 
 top level 클래스는 다른 클래스의 멤버가 아닌 클래스 즉 중첩 클래스가 아닌 클래스를 말한다.
 
@@ -25,13 +25,13 @@ class C {
 
 ## Top Level 클래스 컴파일
 
-자바 소스파일은 파일하나에 클래스 하나를 정의하지만 필요한 경우 두개 이상의 클래스를 정의할 수 있다. 두개 이상의 클래스가 포함된 소스파일을 컴파일하면 소스코드에 속한 클래스의 개수만큼 `.class` 파일이 생성된다. 이는 여러개의 top level 클래스 뿐아니라 중첩 클래스의 경우에도 마찬가지로 적용된다.
+일반적으로 자바 소스파일은 파일 하나에 클래스 하나를 정의하지만 필요한 경우 두 개 이상의 클래스를 정의할 수 있다. 두 개 이상의 클래스가 포함된 소스파일을 컴파일하면 소스코드에 속한 클래스의 개수만큼 `.class` 파일이 생성된다. 이는 여러개의 top level 클래스 뿐아니라 중첩 클래스의 경우에도 마찬가지로 적용된다.
 
-위 예제의 클래스 A.java를 컴파일하면 총 3개의 `.class` 파일이 생성된다.
+위 예제의 소스파일 A.java를 컴파일하면 총 3개의 `.class` 파일이 생성된다.
 
-- `A.class` - `public` top level 클래스 `A` 의 `.class` 파일
-- `C.class` - `package-private` top level 클래스 `C` 의 `.class` 파일
-- `A$B.class` - `A` 의 정적 중첩 클래스 `B` 의 `.class` 파일
+- `A.class` - `public` top level 클래스 `A` 에 대한 `.class` 파일
+- `C.class` - `package-private` top level 클래스 `C` 에 대한 `.class` 파일
+- `A$B.class` - `A` 의 정적 중첩 클래스 `B` 에 대한 `.class` 파일
 
 ## Top Level 클래스 접근 제한
 
