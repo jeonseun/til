@@ -35,6 +35,7 @@ markdown 문서 작성 시 사용하는 문법 정리
   - [테이블 정렬](#테이블-정렬)
 - [각주](#각주)
 - [경고, 참고, 팁 (Admonitions)](#경고-참고-팁)
+- [References](#references)
 
 <br>
 
@@ -528,7 +529,7 @@ markdown 기본 기능에는 이미지 캡션이 없으며 html 태그를 사용
 
 ## 경고, 참고, 팁
 
-특정 내용을 경고, 참고, 팁으로 전달할 때 사용하는 방법으로 Admonitions라 한다. `: :` 사이에 warning, memo, bulb 중 하나를 선택해서 사용한뒤 텍스트를 적으면 된다.
+특정 내용을 경고, 참고, 팁으로 전달할 때 사용하는 방법을 Admonitions라 한다. `: :` 사이에 warning, memo, bulb 등을 입력하면 이모지로 나타나며 이를 응용해서 구현할 수 있다.
 
 ```markdown
 :warning: **경고:** rm -rf를 조심하십시오.
