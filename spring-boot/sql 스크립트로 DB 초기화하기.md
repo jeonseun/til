@@ -6,7 +6,7 @@ spring boot가 제공하는 sql 스크립트를 통한 DB 초기화 기능 사�
 
 - spring boot 3.1.3
 
-### TOC
+## TOC
 
 - [초기화 스크립트 설정](#초기화-스크립트-설정)
   - [적용 모드 설정](#적용-모드-설정)
@@ -43,7 +43,7 @@ spring:
 
 ### sql 스크립트 기본 경로
 
-기본적으로 resources 디렉토리에 있는 schema.sql, data.sql 파일을 읽어서 실행하며 schema.sql에는 주로 DDL, data.sql에는 DML이 들어가는게 일반적이다. 기본값으로 설정된 경로는 다음과 같다.
+기본적으로 resources 디렉토리에 있는 schema.sql, data.sql 파일을 읽어서 실행하며 schema.sql에는 DDL, data.sql에는 DML이 들어가는게 일반적이다. 기본값으로 설정된 경로는 다음과 같다.
 
 - `optional:classpath*:/schema.sql`
 - `optional:classpath*:/data.sql`
@@ -56,7 +56,7 @@ spring:
 
 ### sql 스크립트 경로 설정
 
-sql 스크립트의 기본 경로를 변경 하려면 `spring.sql.init.schema-locations`, `spring.sql.init.data-locations` 설정값을 변경하면 된다.
+sql 스크립트의 기본 경로를 변경 하려면 `spring.sql.init.schema-locations`, `spring.sql.init.data-locations` 설정값을 변경하면 된다. 경로를 여러개 지정하는 것도 가능하다.
 
 ```yml
 # application yml
@@ -87,10 +87,14 @@ spring:
       # platform: h2 # schema-h2.sql, data-h2.sql이 실행됨
 ```
 
-플랫폼 별 sql 스크립트 실행 시 다음 사항을 주의해야 한다.
+sql 스크립트에 플랫폼을 지정하려면 스크립트 경로를 기본값으로 사용해야 한다. 이는 sql 스크립트의 기본 경로를 생성할 때 플랫폼을 고려해서 생성하기 때문이며(`SettingsCreator`[^1] 클래스가 처리) 별도로 sql 스크립트 경로를 지정한 경우 추가작업없이 해당 경로를 그대로 사용하기 때문에 플랫폼 별 스크립트 지정 기능을 사용할 수 없다. 기본값일 때 생성되는 경로는 플랫폼이 지정된 경로 2개와 지정되지 않은 경로 2개로 총 4개가 생성된다.
 
-- `spring.sql.init.platform`의 기본값은 all이므로 별도의 플랫폼을 지정해둔 스크립트 파일은 무시된다.
-- `spring.sql.init.schema-locations`, `spring.sql.init.data-locations` 설정을 변경해서 sql 스크립트 경로를 변경한 경우 이 기능은 동작하지 않는다.
+- `optional:classpath*:/schema.sql`
+- `optional:classpath*:/schema-all.sql`
+- `optional:classpath*:/data.sql`
+- `optional:classpath*:/data-all.sql`
+
+플랫폼을 지정하는 부분이 all인 이유는 `spring.sql.init.platform`의 기본값이 all이기 때문이다. 플랫폼을 별도로 지정하는 경우 지정한 플랫폼으로 변경된다.
 
 ### 스크립트 에러 시 처리 설정
 
@@ -109,7 +113,7 @@ spring:
 
 ## 동작원리
 
-sql 스크립트를 통한 초기화는 `SqlDataSourceScriptDatabaseInitializer` 빈에 의해 수행된다. 해당 빈은 `InitializationBean` 인터페이스의 하위 타입으로 빈 초기화 메서드를 구현하고 있으며 초기화 메서드 내에서 sql 스크립트를 실행하는 구조로 구현되어 있다.
+sql 스크립트를 통한 초기화는 `SqlDataSourceScriptDatabaseInitializer` 빈에 의해 수행된다. 해당 빈은 `InitializingBean` 인터페이스의 하위 타입으로 빈 초기화 메서드를 구현하고 있으며 초기화 메서드 내에서 sql 스크립트를 실행하는 구조로 구현되어 있다.
 
 `SqlDataSourceScriptDatabaseInitializer`는 spring boot 자동 설정에 의해 등록되는 빈이며 `DataSource` 빈이 등록된 경우에만 빈으로 등록된다.
 
@@ -118,3 +122,5 @@ sql 스크립트를 통한 초기화는 `SqlDataSourceScriptDatabaseInitializer`
 ## References
 
 - [Spring Boot Reference Documentation #18.9.3](https://docs.spring.io/spring-boot/docs/3.1.3/reference/htmlsingle/#howto.data-initialization.using-basic-sql-scripts)
+
+[^1]: org.springframework.boot.autoconfigure.sql.init.SettingsCreator 클래스
