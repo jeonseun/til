@@ -2,7 +2,7 @@
 
 spring boot가 제공하는 sql 스크립트를 통한 DB 초기화 기능 사용방법 정리
 
-:gear: versions
+:gear: environments
 
 - spring boot 3.1.3
 

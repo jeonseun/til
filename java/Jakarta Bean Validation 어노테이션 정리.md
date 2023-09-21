@@ -2,7 +2,7 @@
 
 유효성 검증을 위한 Jakarta Bean Validation 어노테이션 정리
 
-:gear: versions
+:gear: environments
 
 - Jakarta Bean Validation 3.0
 - Hibernate Validator 8.0.1.Final
