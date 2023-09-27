@@ -9,6 +9,7 @@
 ## database
 
 - [데이터베이스 기본 개념 정리](./database/데이터베이스%20기본%20개념%20정리.md)
+- [데이터 모델링](./database/데이터%20모델링.md)
 
 ## spring boot
 
