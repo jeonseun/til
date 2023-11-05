@@ -18,4 +18,4 @@
 
 ## markdown
 
-- [markdown 문법 정리](./markdown/markdown%20문법%20정리.md)
+- [markdown 기본 문법 정리](./markdown/markdown%20기본%20문법%20정리.md)
