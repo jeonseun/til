@@ -4,7 +4,9 @@
 
 ## java
 
-- [Jakarta Bean Validation 어노테이션 정리](./java/Jakarta%20Bean%20Validation%20어노테이션%20정리.md)
+## jakarta.ee
+
+- [Jakarta Bean Validation 어노테이션 정리](./jakarta.ee/Jakarta%20Bean%20Validation%20어노테이션%20정리.md)
 
 ## database
 
