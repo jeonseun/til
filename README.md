@@ -14,6 +14,10 @@
 - [데이터 모델링](./database/데이터%20모델링.md)
 - [관계대수](./database/관계대수.md)
 
+## sql
+
+- [CREATE TABLE로 테이블 만들기](./sql/CREATE%20TABLE로%20테이블%20만들기.md)
+
 ## spring boot
 
 - [sql 스크립트로 DB 초기화하기](./spring-boot/sql%20스크립트로%20DB%20초기화하기.md)
