@@ -204,15 +204,15 @@ CREATE TABLE member
 CREATE TABLE member
 (
     id INT,
-    CONSTRAINT uk_member UNIQUE (id)
+    CONSTRAINT uk_member UNIQUE (id) -- 대체키 제약조건 이름 'uk_member'로 지정
 );
 
 -- 항상 유일성을 만족하는 대체키 설정
 CREATE TABLE member
 (
-    -- 단일 속성에 대한 유일성을 만족하는 대체키 지정
+    -- 유일성을 만족하는 단일 속성 대체키 지정
     id       INT         NOT NULL UNIQUE,
-    -- 다중 속성에 대한 유일성을 만족하는 대체키 지정
+    -- 유일성을 만족하는 다중 속성 대체키 지정
     name     VARCHAR(20) NOT NULL,
     nickname VARCHAR(20) NOT NULL,
     CONSTRAINT uk_member UNIQUE (name, nickname)
@@ -238,8 +238,12 @@ CREATE TABLE member
 
 외래키 지정 방법
 
+![member team erd](../resources/images/sql/CREATE%20TABLE로%20테이블%20만들기/erd.png)
+
+_회원과 팀의 관계를 나타내는 ERD_
+
 ```sql
--- team, member 두 테이블의 관계를 나타내기 위한 외래키 지정
+-- team, member 두 테이블의 관계를 나타내기 위한 외래키 지정, 편의상 일부 속성 생략
 
 -- member 테이블의 외래키가 참조하게될 team 테이블
 CREATE TABLE team
@@ -260,13 +264,16 @@ CREATE TABLE member
 (
     id      INT PRIMARY KEY,
     team_id INT,
-    CONSTRAINT fk_member_team FOREIGN KEY (team_id) REFERENCES team (id)
+    CONSTRAINT fk_member_team FOREIGN KEY (team_id) REFERENCES team (id) -- 외래키 제약조건 이름 'fk_member_team'로 지정
 )
 ```
 
 #### 참조 대상 변경에 따른 작업 설정
 
-외래키를 지정해서 두 테이블의 관계가 형성되었을 때 참조하는 테이블의 행이 삭제 또는 수정될 경우 외래키가 지정된 테이블의 행에 수행될 동작을 설정할 수 있다.
+외래키를 통해 관계가 형성된 두 테이블에서 관련있는 행의 삭제, 수정에 따라 수행될 동작을 지정할 수 있다.
+
+- 외래키가 참조하는 대상의 삭제, 수정에 따라 외래키가 지정된 테이블에 수행되는 동작을 지정하는 설정
+- 참조하는 테이블의 데이터 삭제, 수정 시 수행될 동작을 지정할 수 있으며 세부적인 4가지 옵션을 지정 가능
 
 ```sql
 CREATE TABLE team
@@ -284,6 +291,9 @@ CREATE TABLE member
 );
 ```
 
+- `ON DELETE` → 외래키가 참조하는 행의 삭제 시 수행될 동작 지정
+- `ON UPDATE` → 외래키가 참조하는 행의 수정 시 수행될 동작 지정
+
 옵션 목록
 
 - `NO ACTION` → 외래키가 참조하는 행의 삭제, 수정을 금지, 기본값
@@ -298,18 +308,25 @@ CREATE TABLE member
 기본키, 대체키, 외래키 같은 제약조건 외에도 특정 속성에 대한 제약조건을 설정할 수 있다.
 
 - `CHECK (condition)` 로 제약조건 설정
-- 제약조건을 설정할 경우 데이터의 삽입, 수정시 설정된 제약조건을 지켜야 함
+- 제약조건을 설정할 경우 데이터의 삽입, 수정시 설정된 제약조건을 지켜야 함 (데이터 무결성 제약조건)
 - 여러개의 제약조건을 설정할 수 있음
 
 제약조건 설정 방법
 
 ```sql
+-- 속성을 정의할 때 제약조건 설정
+CREATE TABLE product
+(
+    name  VARCHAR(20),
+    stock INT CHECK ( stock >= 0) -- stock (재고량)은 음수일 수 없음
+);
+
 -- 제약조건 설정
 CREATE TABLE product
 (
     name  VARCHAR(20),
     stock INT,
-    CHECK ( stock >= 0 ) -- stock (재고량)은 음수일 수 없음
+    CHECK ( stock >= 0 )
 );
 
 -- 제약조건 설정 (이름 지정)
