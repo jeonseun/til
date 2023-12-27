@@ -240,7 +240,7 @@ CREATE TABLE member
 
 ![member team erd](../resources/images/sql/CREATE%20TABLE로%20테이블%20만들기/erd.png)
 
-_회원과 팀의 관계를 나타내는 ERD_
+_회원과 팀의 관계를 나타내는 ERD [powered by DrawSQL](https://drawsql.app/diagrams)_
 
 ```sql
 -- team, member 두 테이블의 관계를 나타내기 위한 외래키 지정, 편의상 일부 속성 생략
