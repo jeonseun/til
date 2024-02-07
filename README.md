@@ -6,8 +6,9 @@
 
 - [primitive type 정리](./java/primitive%20type%20정리.md)
 - [연산자 기본 개념](./java/연산자%20기본%20개념.md)
-- [조건분, 반복문](./java/조건문,%20반복문.md)
+- [조건문, 반복문](./java/조건문,%20반복문.md)
 - [배열](./java/배열.md)
+- [객체 & 클래스](./java/객체%20&%20클래스.md)
 
 ## jakarta.ee
 
