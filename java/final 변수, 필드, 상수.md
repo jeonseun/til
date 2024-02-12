@@ -2,12 +2,16 @@
 
 변수에 사용하는 `final` 키워드의 효과와 특징
 
-> [!IMPORTANT] Tags
-> java, final, variable, constant
+**Tags**
 
-> [!NOTE] Environments
->
-> - JDK 21
+- java
+- final
+- variable
+- constant
+
+**Environments**
+
+- JDK 21
 
 <br>
 
@@ -176,7 +180,7 @@ public static void main(String[] args) {
 }
 ```
 
-> [!TIP] 컴파일 타임 상수
+> 컴파일 타임 상수
 >
 > 기본형, 문자열 상수가 컴파일 시점에 값을 알 수 있다면 컴파일러는 해당 상수가 사용된 부분의 코드를 값으로 변경하며 이를 컴파일 타임 상수라 한다.
 
